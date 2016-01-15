@@ -15414,3 +15414,87 @@ Started GET "/assets/bootstrap-sprockets" for ::1 at 2016-01-14 21:26:53 -0800
 
 
 Started GET "/assets/bootstrap" for ::1 at 2016-01-14 21:26:53 -0800
+
+
+Started GET "/" for ::1 at 2016-01-15 15:21:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ChecksController#index as HTML
+  [1m[35mCheck Load (19.8ms)[0m  SELECT `checks`.* FROM `checks`
+  Rendered checks/index.html.erb within layouts/application (871.7ms)
+Completed 200 OK in 1214ms (Views: 1146.6ms | ActiveRecord: 56.4ms)
+
+
+Started GET "/assets/checks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-15 15:21:13 -0800
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-15 15:21:13 -0800
+
+
+Started GET "/assets/user_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/application.self-70d0ec5a175b729827649a3875b636b113eff8be6d9eadcc203132a083413f9a.css?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/checks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/user_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-01-15 15:21:14 -0800
+
+
+Started DELETE "/checks/9" for ::1 at 2016-01-15 15:21:20 -0800
+Processing by ChecksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oy5En28pafulej6NmcDlkNa1rZG3LXuUikjCn0LH9BrtI1PtoRDJQKgJEuDBXu9vzEry7j9kx1pYzHU6eveVIA==", "id"=>"9"}
+  [1m[36mCheck Load (23.3ms)[0m  [1mSELECT  `checks`.* FROM `checks` WHERE `checks`.`id` = 9 LIMIT 1[0m
+  [1m[35m (1.8ms)[0m  BEGIN
+  [1m[36mSQL (1.8ms)[0m  [1mDELETE FROM `checks` WHERE `checks`.`id` = 9[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered checks/destroy.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 1019ms (Views: 54.3ms | ActiveRecord: 27.3ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-01-15 15:21:21 -0800
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2016-01-15 15:21:21 -0800
+
+
+Started GET "/" for ::1 at 2016-01-15 15:36:07 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ChecksController#index as HTML
+  [1m[35mCheck Load (0.5ms)[0m  SELECT `checks`.* FROM `checks`
+  Rendered checks/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 1589ms (Views: 1577.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for ::1 at 2016-01-15 15:36:08 -0800
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-01-15 15:36:08 -0800
