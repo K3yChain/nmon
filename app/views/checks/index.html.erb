@@ -1,0 +1,13 @@
+<h1>Check Your Server Status</h1>
+<% @checks.each do |check| %>
+<b>Check Name: <%= check.check_name %></b></br>
+Hostname: <%= check.check_hostname %></br>
+      <% auth = {:username => 'stuff@logi-tek.net', :password => 'tina2000'}  %>
+      <% query = {'host' => check.check_hostname, 'type' => 'http'} %>
+      <% response = HTTParty.get('https://api.pingdom.com/api/2.0/checks/'+ check.check_id.to_s, headers: {"app-key" => "2j7igy6801oc1cw1yrm0xyozbsmx9p97"}, :basic_auth => auth, :query => query).body %>
+      <% @response = JSON.parse(response).to_h %>
+      Status: <%= @response["check"]["status"] %>
+      <li><%= link_to "Delete", "/checks/#{check.id}", method: :delete %></li>
+      <br>
+      <hr>
+      <% end %>

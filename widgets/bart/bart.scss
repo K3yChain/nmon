@@ -1,0 +1,43 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$borderColor: #000;
+$text-color: #FF0000;
+// ----------------------------------------------------------------------------
+// Widget-text styles
+// ----------------------------------------------------------------------------
+
+.bart {
+    font-family:'Conv_modern_led_board-7',Sans-Serif;
+    background: -moz-radial-gradient(center, ellipse cover,  #222222 0%, #000000 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#222222), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  #222222 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  #222222 0%,#000000 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  #222222 0%,#000000 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #222222 0%,#000000 100%); /* W3C */
+    border: 2px solid $borderColor;
+
+  .estimates {
+
+     .estimate{
+       clear: both;
+       padding-bottom: 10px;
+       font-size: 18px;
+       line-height: 35px;
+       color: $text-color;
+       .time{
+         float: left;
+       }
+       .cars{
+         float: right;
+       }
+     }
+  }
+
+  .station {
+      font-size: 24px;
+      line-height: 45px;
+      color: $text-color;
+  }
+
+}
