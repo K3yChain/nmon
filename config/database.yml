@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: nmon_staging_production
-  username: nmon_staging
-  password: <%= ENV['NMON_STAGING_DATABASE_PASSWORD'] %>
+  username: root 
+  password:  
