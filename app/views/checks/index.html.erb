@@ -11,3 +11,13 @@ Hostname: <%= check.check_hostname %></br>
       <br>
       <hr>
       <% end %>
+
+<h3>List of Check IDs</h3>
+
+ID's:
+ <% auth = {:username => 'stuff@logi-tek.net', :password => 'tina2000'}  %>
+      <% query = {'host' => check.check_hostname, 'type' => 'http'} %>
+      <% response = HTTParty.get('https://api.pingdom.com/api/2.0/checks/'+ check.check_id.to_s, headers: {"app-key" => "2j7igy6801oc1cw1yrm0xyozbsmx9p97"}, :basic_auth => auth, :query => query).body %>
+      <% @response = JSON.parse(response).to_h %>
+      Status: <%= @response["check"]["id"] %>
+      <% end %>
