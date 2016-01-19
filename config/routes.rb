@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'checks#index'
+  root to: 'pages#index'
   resources :checks
+  resources :pages
+  resources :contact
   resources :users, only: [:new, :create]
 
   resources :user_sessions, only: [:create, :destroy]
