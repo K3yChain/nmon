@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
@@ -27,13 +28,13 @@
     </div>
   </div>
 </nav>
+<% flash.each do |name, message| %>
+ <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong><%= message %></strong>
+</div>
+<% end %>
 
-<div class="container">
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>">
-      <%= value %>
-    </div>
-  <% end %>
 <%= yield %>
 </div>
 </body>
