@@ -17753,3 +17753,58 @@ Processing by ChecksController#index as HTML
   [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_request_at` = '2016-01-19 03:49:35', `updated_at` = '2016-01-19 03:49:35' WHERE `users`.`id` = 1
   [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
 Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2016-01-18 20:25:59 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ChecksController#index as HTML
+  [1m[35mCheck Load (0.3ms)[0m  SELECT `checks`.* FROM `checks`
+  Rendered checks/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2016-01-19 04:26:00', `updated_at` = '2016-01-19 04:26:00' WHERE `users`.`id` = 1[0m
+  [1m[35m (2.0ms)[0m  COMMIT
+Completed 200 OK in 708ms (Views: 692.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-01-18 20:26:00 -0800
+
+
+Started GET "/checks/new" for ::1 at 2016-01-18 20:26:07 -0800
+Processing by ChecksController#new as HTML
+  Rendered checks/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2016-01-19 04:26:07', `updated_at` = '2016-01-19 04:26:07' WHERE `users`.`id` = 1[0m
+  [1m[35m (2.0ms)[0m  COMMIT
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/checks" for ::1 at 2016-01-18 20:26:12 -0800
+Processing by ChecksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"os24tCo3BT/naMgPGpEV85wv6kEACeGW6DkTfOq+qDa3Rp+7yGDj3H+euwhRa8517aKlg9bf0HjTXAfYQ+jQRQ==", "check_name"=>"Natasha's Website", "check_hostname"=>"devourgoodfood.com", "commit"=>"Submit Check"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2016-01-19 04:26:12', `updated_at` = '2016-01-19 04:26:12' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `checks` (`check_name`, `check_hostname`, `user_id`, `created_at`, `updated_at`) VALUES ('Natasha\'s Website', 'devourgoodfood.com', 1, '2016-01-19 04:26:12', '2016-01-19 04:26:12')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `checks` SET `check_id` = 1955380, `updated_at` = '2016-01-19 04:26:15' WHERE `checks`.`id` = 2[0m
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/checks/
+Completed 302 Found in 3197ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/checks/" for ::1 at 2016-01-18 20:26:15 -0800
+Processing by ChecksController#index as HTML
+  [1m[36mCheck Load (0.3ms)[0m  [1mSELECT `checks`.* FROM `checks`[0m
+  Rendered checks/index.html.erb within layouts/application (819.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_request_at` = '2016-01-19 04:26:16', `updated_at` = '2016-01-19 04:26:16' WHERE `users`.`id` = 1
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 856ms (Views: 852.4ms | ActiveRecord: 2.8ms)
