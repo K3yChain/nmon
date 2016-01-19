@@ -19,10 +19,16 @@ class ChecksController < ApplicationController
     query = {'host' => @check.check_hostname, 'type' => 'http'}
     response = HTTParty.post('https://api.pingdom.com/api/2.0/checks?name=' + url_check_name + '&host=' + url_hostname + '&type=http', headers: {"app-key" => "2j7igy6801oc1cw1yrm0xyozbsmx9p97"}, :basic_auth => auth, :query => query).body
     post_response = JSON.parse(response).to_h
-
     grabbed_check_id = post_response["check"]["id"]
     p grabbed_check_id
     @check.update(check_id: grabbed_check_id)
+  if @check.save
+  flash[:success] = "Check Created"
+  redirect_to "/checks/#{@check_id}"
+  else
+    render :new
+  end
+    
   end
 
   def new
@@ -41,8 +47,10 @@ class ChecksController < ApplicationController
     auth = {:username => 'stuff@logi-tek.net', :password => 'tina2000'}
     query = {'host' => @check.check_hostname, 'type' => 'http'}
     response = HTTParty.delete('https://api.pingdom.com/api/2.0/checks/' + @check.check_id.to_s, headers: {"app-key" => "2j7igy6801oc1cw1yrm0xyozbsmx9p97"}, :basic_auth => auth, :query => query).body
-    @post_response = JSON.parse(response).to_h
+    post_response = JSON.parse(response).to_h
     @check.destroy
+    redirect_to "/checks"
+    flash[:danger] = post_response['message']
   end
 
 end
